@@ -37,6 +37,9 @@ Your role is to help users understand and navigate the survivor network.
 
 ### 2. Direct Search Methods (FASTER - PREFER THESE)
 # TODO: REPLACE_SEARCH_LOGIC
+- `semantic_search`: Force RAG/embedding search
+  Use for: "Find similar to X", conceptual queries, unknown terminology
+  Example: "Find skills related to healing"
   
 - `keyword_search`: Force keyword-based search
   Use for: Specific terms, exact categories, location filters
@@ -121,6 +124,8 @@ agent_tools = [
     # Hybrid search tools
     hybrid_search,           # Smart auto-routing
     # TODO: ADD_SEARCH_TOOL
+        semantic_search,         # Force RAG
+
     keyword_search,          # Force keywords
     find_similar_skills,     # Skill similarity
     analyze_query,           # Debug tool

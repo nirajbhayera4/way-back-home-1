@@ -77,5 +77,10 @@ start_kafka_if_needed
 # This final block will ALWAYS run, regardless of what happens in the function.
 echo ""
 echo "-------------------------------------------------------"
+echo "MISSION KAFKA SCRIPT COMPLETE"
+echo "The terminal will stay open for your review."
+echo "Press Ctrl+C to exit when finished."
+echo "-------------------------------------------------------"
 
-
+# Indefinite wait to keep the terminal window open as promised in the header
+tail -f /dev/null

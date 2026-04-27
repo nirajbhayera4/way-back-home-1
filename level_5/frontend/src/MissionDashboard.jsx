@@ -143,6 +143,11 @@ export default function MissionDashboard() {
         };
     }, []);
 
+    // Add initial log to prevent "blank" appearance and confirm UI is active
+    useEffect(() => {
+        addLog("SYSTEM BOOT COMPLETE. INITIALIZING SENSORS...");
+    }, []);
+
     // --- Helpers ---
     const addLog = (msg) => {
         setLogs(prev => {
@@ -529,7 +534,7 @@ export default function MissionDashboard() {
                                 <Terminal className="w-4 h-4" /> SYSTEM LOGS
                             </h2>
                             <div className="flex-1 overflow-y-auto space-y-1 font-mono text-xs pr-2">
-                                {logs.length === 0 && <div className="text-slate-600 italic">Waiting for telemetry...</div>}
+                                {logs.length === 0 && <div className="text-slate-400 italic">Waiting for telemetry...</div>}
                                 {logs.map((log, i) => (
                                     <div key={i} className="text-cyan-500/80 hover:text-white transition-colors break-words">
                                         {log}
